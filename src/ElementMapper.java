@@ -20,9 +20,8 @@ public class ElementMapper {
 		return new Element(element.getId(), element.getElementName());
 	}
 
-	public SubElement createSubElementIfNotExist(TreeSet<SubElement> subElements, SubElement element) {
-
-		return new SubElement(element.getId(), element.getElement());
+	public Element createSubElementIfNotExist(TreeSet<Element> subElements, Element element) {
+		return new Element(element.getId(), element.getElementName());
 	}
 
 	public TreeSet<Element> createNode(TreeMap<String, TreeSet<Element>> elements, String key) {
@@ -35,8 +34,8 @@ public class ElementMapper {
 	}
 
 	public List<List<String>> parseList() {
-		return Arrays.asList(Arrays.asList("HABITATION", "1", "L01"), Arrays.asList("GARANTIES", "1"),
-				Arrays.asList("CLAUSESLIBRE", "1"));
+		return Arrays.asList(Arrays.asList("NIVEAU_1-NIVEAU_3", "1", "L01"), Arrays.asList("NIVEAU_1-NIVEAU_2", "1"),
+				Arrays.asList("NIVEAU_2", "1"));
 	}
 
 	public Element findElement(TreeSet<Element> subElements, Element element) {

@@ -4,7 +4,7 @@ public class Element implements Comparable<Element> {
 
 	private Integer id;
 	private String elementName;
-	private TreeSet<SubElement> subElement;
+	private TreeSet<Element> subElement;
 
 	public Element() {
 
@@ -14,10 +14,10 @@ public class Element implements Comparable<Element> {
 		super();
 		this.id = id;
 		this.elementName = elementName;
-		this.subElement = new TreeSet<SubElement>();
+		this.subElement = new TreeSet<Element>();
 	}
 
-	public Element(Integer id, String elementName, TreeSet<SubElement> subelement) {
+	public Element(Integer id, String elementName, TreeSet<Element> subelement) {
 		super();
 		this.id = id;
 		this.elementName = elementName;
@@ -40,11 +40,11 @@ public class Element implements Comparable<Element> {
 		this.elementName = elementName;
 	}
 
-	public TreeSet<SubElement> getSubelement() {
+	public TreeSet<Element> getSubelement() {
 		return subElement;
 	}
 
-	public void setSubElement(TreeSet<SubElement> subelement) {
+	public void setSubElement(TreeSet<Element> subelement) {
 		this.subElement = subElement;
 	}
 

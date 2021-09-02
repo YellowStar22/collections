@@ -17,16 +17,11 @@ public class Main {
 			String id = rattachement.get(i).get(1);
 			System.out.println(type + " " + id);
 			element = elementMapper.createElementIfNotExist(node, new Element(Integer.parseInt(id), type));
-			SubElement subElement = elementMapper.createSubElementIfNotExist(element.getSubelement(),
-					new SubElement(Integer.parseInt(id), type));
+			Element subElement = elementMapper.createSubElementIfNotExist(element.getSubelement(),
+					new Element(Integer.parseInt(id), type));
 			element.getSubelement().add(subElement);
 		}
 		node.add(element);
-
-//		element.getSubelement().add(subElement);
-//		node.add(element);
-//		element.setElementName("Element 13");
-
 		Collection<Entry<String, TreeSet<Element>>> values = treeMap.entrySet();
 
 		for (Entry<String, TreeSet<Element>> entry : values) {
