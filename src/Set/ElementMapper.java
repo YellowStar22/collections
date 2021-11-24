@@ -1,3 +1,4 @@
+package Set;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
@@ -11,8 +12,7 @@ public class ElementMapper {
 	}
 
 	public Element createElementIfNotExist(TreeSet<Element> subElements, Element element) {
-		for (Iterator iterator = subElements.iterator(); iterator.hasNext();) {
-			Element subElement = (Element) iterator.next();
+		for (Element subElement : subElements) {
 			if (subElement.getId().equals(element.getId())) {
 				return subElement;
 			}
