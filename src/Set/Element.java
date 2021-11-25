@@ -8,7 +8,7 @@ public class Element implements Comparable<Element> {
 	private TreeSet<Element> subElement;
 
 	public Element() {
-
+		this.id = 0;
 	}
 
 	public Element(Integer id, String elementName) {
