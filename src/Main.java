@@ -9,33 +9,23 @@ import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
 
-
-
-import Set.Element;
-import Set.ElementMapper;
+import Set.SetManipulation;
+import model.Element;
+import model.ElementMapper;
+import table.TableManipulation;
 public class Main {
 	
 
 	public static void main(String[] args) {
-		ElementMapper elementMapper = new ElementMapper();
-		TreeMap<String, TreeSet<Element>> treeMap = new TreeMap<String, TreeSet<Element>>();
-		List<List<String>> rattachement = elementMapper.parseList();
-		Element element = null;
-		TreeSet<Element> node = elementMapper.createNode(treeMap, rattachement.get(0).get(0));
-		for (int i = 1; i < rattachement.size(); i++) {
-			String type = rattachement.get(i).get(0);
-			String id = rattachement.get(i).get(1);
-			System.out.println(type + " " + id);
-			element = elementMapper.createElementIfNotExist(node, new Element(Integer.parseInt(id), type));
-			Element subElement = elementMapper.createSubElementIfNotExist(element.getSubelement(),
-					new Element(Integer.parseInt(id), type));
-			element.getSubelement().add(subElement);
-		}
-		node.add(element);
-		Collection<Entry<String, TreeSet<Element>>> values = treeMap.entrySet();
-
-		for (Entry<String, TreeSet<Element>> entry : values) {
-			System.out.println(entry.getKey() + " + " + entry.getValue().toString());
+		SetManipulation.parcourirElement();
+		
+		
+		int [][] tab = {{1,2,3,4,5,6},{2,3,4,5,6,7},{3,4,5,6,7,8}};
+		TableManipulation.shiftToTheLeft(tab, 1);
+		
+		TableManipulation.showTable(tab);
+			
+			
 	}
 	
 }
